@@ -1,17 +1,21 @@
 #!/bin/bash
 
+# decalring variables
 name="ayon"
 message=$(pwd)
-echo "my name is: $name"
-echo "her is the current path: $message"
 
+# checking variable outputs
+echo "my name is: $name"
+echo "the current path: $message"
+
+# doing sum
 num1=10
 num2=20
 expr $num1 + $num2
 
-# gt = greater than, ! = reverse the condition
-# ne = not equal
+# ! = reverse the condition
 specialnum=99
+
 if [ $specialnum -eq 99 ]
 then
   echo "statement correct"
@@ -29,10 +33,10 @@ fi
 
 # check out test manpage
 location="/usr/bin/htop"
-if [ -f $location ]
+if [ ! -f $location ]
 then
-  echo "$location exists"
-else
   echo "$location does not exists, installing ..."
   sudo pacman -S htop -y
+else
+  echo "$location exists"
 fi
